@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div class="container">
+    <form action="" method="POST">
+      <div class="input-field">
+        <input name="query" id="query" type="text" placeholder="Enter product name">
+        <label for="query">Query</label>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit">Submit
+        <i class="material-icons right">send</i>
+      </button>      
+    </form>
+    {% if products %}
+    <table class="striped">
+      <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for product in products %}
+        <tr>
+          <td>{{product.title}}</td>
+          <td>{{product.price}}</td>
+          <td>
+            <img src="{{product.img}}">
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endif %}
+  </div>
+
+{% endblock %}
