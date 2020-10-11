@@ -1,20 +1,7 @@
 from flask import Flask,render_template,request
 import scrapper
 app=Flask('My Application')
-USERS=[
-    {
-        'id':1,
-        'name':'sampoorna',
-    },
-    {
-        'id':2,
-        'name':'sachin',
-    },
-    {
-        'id':3,
-        'name':'aditya',
-    }
-]
+
 @app.route('/',methods=['GET','POST']) #mapping this url , route returns decorator
 def index():
     products=[]
